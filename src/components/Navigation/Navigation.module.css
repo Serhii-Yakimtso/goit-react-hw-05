@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background-color: blueviolet;
+}
+.link {
+  display: block;
+  width: max-content;
+  padding: 8px;
+  border: 2px solid grey;
+  border-radius: 4px;
+
+  font-weight: 700;
+  color: blue;
+  text-decoration: none;
+  background-color: lightgrey;
+}
+
+.link:hover,
+.link:hover {
+  background-color: lightcyan;
+}
+
+.active {
+  color: orange;
+}
