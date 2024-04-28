@@ -11,7 +11,6 @@ export default function MoviesPage() {
   const handlesubmit = event => {
     event.preventDefault();
     const nameMovie = event.target.name.value;
-    console.log(nameMovie);
     setSearch(nameMovie);
   };
 
@@ -22,7 +21,6 @@ export default function MoviesPage() {
           return;
         }
         const data = await searchMovies(search);
-        console.log(data);
         setMovies(data);
         setFindMovies(true);
       } catch (error) {
