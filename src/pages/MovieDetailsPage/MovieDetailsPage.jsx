@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchDataMovie } from '../../api';
-import Navigation from '../../components/Navigation/Navigation';
 
 import css from './MovieDetailsPage.module.css';
 
@@ -10,7 +9,6 @@ export default function MovieDetailsPage() {
   const [error, setError] = useState(false);
 
   const { movieId } = useParams();
-  //   console.log(movieId);
 
   useEffect(() => {
     async function fetchDataMovie() {

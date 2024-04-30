@@ -52,3 +52,18 @@ export const searchDataMovie = id => {
   return response;
   // return (await response).data.results;
 };
+
+export const searchCastMovie = id => {
+  const response = axios.get(`/movie/${id}/credits`, {
+    headers: {
+      Authorization: authorization,
+    },
+    params: {
+      // append_to_response: parametr,
+      language: 'en-US',
+    },
+  });
+
+  return response;
+  // return (await response).data.results;
+};
