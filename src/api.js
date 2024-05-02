@@ -38,13 +38,12 @@ export const searchMovies = async query => {
   return (await response).data.results;
 };
 
-export const searchDataMovie = id => {
+export const getDataMovie = id => {
   const response = axios.get(`/movie/${id}`, {
     headers: {
       Authorization: authorization,
     },
     params: {
-      // append_to_response: parametr,
       language: 'en-US',
     },
   });
@@ -53,17 +52,28 @@ export const searchDataMovie = id => {
   // return (await response).data.results;
 };
 
-export const searchCastMovie = id => {
+export const getCastMovie = id => {
   const response = axios.get(`/movie/${id}/credits`, {
     headers: {
       Authorization: authorization,
     },
     params: {
-      // append_to_response: parametr,
       language: 'en-US',
     },
   });
 
   return response;
   // return (await response).data.results;
+};
+
+export const getReviewsMovie = id => {
+  const response = axios.get(`movie/${id}/reviews`, {
+    headers: {
+      Authorization: authorization,
+    },
+    params: {
+      language: 'en-US',
+    },
+  });
+  return response;
 };

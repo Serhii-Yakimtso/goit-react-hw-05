@@ -7,7 +7,6 @@ import MovieReviews from '../MovieReviews/MovieReviews';
 import Layout from '../Layout/Layout';
 import MovieList from '../MovieList/MovieList';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
-import './App.css';
 
 function App() {
   return (

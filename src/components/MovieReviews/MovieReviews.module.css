@@ -1,0 +1,13 @@
+.item {
+  padding: 8px;
+  border-top: 1px solid black;
+}
+
+.wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.img {
+  width: 100px;
+}

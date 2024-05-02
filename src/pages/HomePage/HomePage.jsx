@@ -2,6 +2,8 @@
 import { getMovies } from '../../api';
 import { useEffect, useState } from 'react';
 import MovieList from '../../components/MovieList/MovieList';
+import Loader from '../../components/Loader/Loader';
+import Error from '../../Error/Error';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -25,8 +27,8 @@ export default function HomePage() {
 
   return (
     <>
-      {loader && 'Loading. Please wait'}
-      {error && 'Something wrong. Try again later'}
+      {loader && <Loader />}
+      {error && <Error />}
       <MovieList movies={movies} />
     </>
   );

@@ -1,3 +1,9 @@
 .img {
   width: 200px;
 }
+
+.genre {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
