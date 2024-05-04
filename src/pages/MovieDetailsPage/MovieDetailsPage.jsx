@@ -1,5 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import {
+  Link,
+  useParams,
+  Outlet,
+  useSearchParams,
+  useLocation,
+  NavLink,
+} from 'react-router-dom';
 import { getDataMovie } from '../../api';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../Error/Error';
@@ -15,6 +22,10 @@ export default function MovieDetailsPage() {
   const [error, setError] = useState(false);
 
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkHref = useRef(location.state ?? '/movies');
+  // console.log(location);
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     async function fetchDataMovie() {
@@ -82,6 +93,9 @@ export default function MovieDetailsPage() {
       )} */}
       {findMovies && (
         <div>
+          <NavLink className={css.btn} to={backLinkHref.current}>
+            Go back
+          </NavLink>
           <div>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}

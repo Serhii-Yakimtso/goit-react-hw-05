@@ -1,5 +1,6 @@
 import { searchMovies } from '../../api';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../Error/Error';
@@ -11,10 +12,23 @@ export default function MoviesPage() {
   const [error, setError] = useState(false);
   const [loader, setLoader] = useState(false);
 
+  // const [searchParams, setSearchParams] = useSearchParams();
+
+  // const queryParams = searchParams.get('query') ?? '';
+
+  // const changeFilterParams = newFilter => {
+  //   searchParams.set('query', newFilter);
+  //   setSearchParams({
+  //     query: searchParams,
+  //   });
+  //   console.log(searchParams);
+  // };
+
   const handlesubmit = event => {
     event.preventDefault();
     const nameMovie = event.target.name.value;
     setSearch(nameMovie);
+    // changeFilterParams(nameMovie);
   };
 
   useEffect(() => {
