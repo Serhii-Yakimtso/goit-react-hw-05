@@ -14,8 +14,8 @@ import Error from '../../Error/Error';
 import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
-  // const [dataMovie, setDataMovie] = useState(null);
-  const [dataMovie, setDataMovie] = useState({});
+  const [dataMovie, setDataMovie] = useState(null);
+  // const [dataMovie, setDataMovie] = useState({});
   const [findMovies, setFindMovies] = useState(false);
 
   const [loader, setLoader] = useState(false);
@@ -23,7 +23,9 @@ export default function MovieDetailsPage() {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkHref = useRef(location.state ?? '/movies');
+  const backLimkURL = useRef(location.state ?? '/movies');
+  console.log('detail', location);
+  console.log('detail Ref', backLimkURL);
   // console.log(location);
   // const [searchParams, setSearchParams] = useSearchParams();
 
@@ -45,7 +47,7 @@ export default function MovieDetailsPage() {
     fetchDataMovie();
   }, [movieId]);
 
-  const { poster_path, title, popularity, overview, genres } = dataMovie;
+  const { poster_path, title, popularity, overview, genres } = dataMovie ?? {};
   // useEffect(() => {
   //   console.log('poster_path', poster_path);
   //   console.log('title', title);
@@ -91,9 +93,9 @@ export default function MovieDetailsPage() {
           </ul>
         </div>
       )} */}
-      {findMovies && (
+      {dataMovie && (
         <div>
-          <NavLink className={css.btn} to={backLinkHref.current}>
+          <NavLink className={css.btn} to={backLimkURL.current}>
             Go back
           </NavLink>
           <div>
