@@ -1,6 +1,6 @@
-// import { MovieList } from '../../components/MovieList/MovieList';
-import { getMovies } from '../../api';
 import { useEffect, useState } from 'react';
+import { getMovies } from '../../api';
+
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../Error/Error';

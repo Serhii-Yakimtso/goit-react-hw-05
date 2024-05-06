@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCastMovie } from '../../api';
+
 import Loader from '../Loader/Loader';
 import Error from '../../Error/Error';
 

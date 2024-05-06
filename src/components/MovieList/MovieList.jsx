@@ -1,4 +1,5 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+
 import css from './MovieList.module.css';
 
 export default function MovieList({ movies }) {
@@ -17,7 +18,7 @@ export default function MovieList({ movies }) {
                   alt={title}
                   width="100"
                 />
-                <p className={css.title}> {title}</p>
+                <p className={css.title}>{title}</p>
               </div>
             </NavLink>
           </li>
