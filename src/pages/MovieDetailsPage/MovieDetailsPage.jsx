@@ -28,7 +28,7 @@ export default function MovieDetailsPage() {
       try {
         setLoader(true);
         const data = await getDataMovie(movieId);
-        setDataMovie(data.data);
+        setDataMovie(data);
       } catch (error) {
         setError(true);
       } finally {
