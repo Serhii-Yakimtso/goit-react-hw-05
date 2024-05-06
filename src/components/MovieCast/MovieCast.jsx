@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getCastMovie } from '../../api';
 
 import Loader from '../Loader/Loader';
-import Error from '../../Error/Error';
+import Error from '../Error/Error';
 
 import css from './MovieCast.module.css';
 
@@ -32,6 +32,7 @@ export default function MovieCast() {
     <>
       {loader && <Loader />}
       {error && <Error />}
+      {dataMovieCast.length === 0 && <p>Sorry. No cast for this movie.</p>}
       {dataMovieCast && (
         <ul className={css.list}>
           {dataMovieCast.map(

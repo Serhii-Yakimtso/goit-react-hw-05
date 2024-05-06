@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviewsMovie } from '../../api';
 import Loader from '../Loader/Loader';
-import Error from '../../Error/Error';
+import Error from '../Error/Error';
 
 import css from './MovieReviews.module.css';
 
@@ -18,7 +18,6 @@ export default function MovieReviews() {
         setLoader(true);
         const data = await getReviewsMovie(movieId);
         getDataMovieReviews(data.data.results);
-        // console.log(data.data.results);
       } catch (error) {
         setError(true);
       } finally {

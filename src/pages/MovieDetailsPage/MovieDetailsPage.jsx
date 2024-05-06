@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import {
   Link,
   useParams,
@@ -9,7 +9,7 @@ import {
 import { getDataMovie } from '../../api';
 
 import Loader from '../../components/Loader/Loader';
-import Error from '../../Error/Error';
+import Error from '../../components/Error/Error';
 
 import css from './MovieDetailsPage.module.css';
 
@@ -29,7 +29,6 @@ export default function MovieDetailsPage() {
         setLoader(true);
         const data = await getDataMovie(movieId);
         setDataMovie(data.data);
-        setFindMovies(true);
       } catch (error) {
         setError(true);
       } finally {
@@ -80,7 +79,9 @@ export default function MovieDetailsPage() {
             </li>
           </ul>
 
-          <Outlet />
+          <Suspense fallback={<div>loading</div>}>
+            <Outlet />
+          </Suspense>
         </div>
       )}
     </>

@@ -3,7 +3,7 @@ import { getMovies } from '../../api';
 
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
-import Error from '../../Error/Error';
+import Error from '../../components/Error/Error';
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);

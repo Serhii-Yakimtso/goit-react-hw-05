@@ -4,7 +4,7 @@ import { searchMovies } from '../../api';
 
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
-import Error from '../../Error/Error';
+import Error from '../../components/Error/Error';
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
